@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    dl {}
+
+    dt,
+    dd {
+      padding: 10px;
+    }
+
+    dt {
+      background-color: #cfc;
+      margin-bottom: 5px;
+    }
+
+    dt span {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background-color: black;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    dt.on span {
+      background-color: red;
+    }
+
+    dd {
+      background-color: tan;
+      margin-bottom: 5px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+    <dt><span></span>이게 뭔가요?</dt>
+    <dd>나도 몰라...</dd>
+    <dt><span></span>질문입니다...</dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maiores.</dd>
+  </dl>
+  <script>
+  $(function() {
+    $('dt').on('click', function() {
+
+      if ($(this).hasClass('on')) {
+        slideUp();
+      } else {
+        slideUp();
+        $(this).addClass('on').next().slideDown();
+      }
+
+      function slideUp() {
+        $('dt').removeClass('on').next().slideUp();
+      };
+    });
+  });
+
+  </script>
+</body>
+
+</html>
